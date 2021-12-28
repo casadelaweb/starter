@@ -1,0 +1,348 @@
+// Файл для сборки всех стилей
+@charset 'UTF-8';
+
+// Сброс стилей
+
+// Цвет выделения
+* {
+  &::selection {
+    background: rgba(mediumseagreen, 0.25);
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  display: block;
+  min-height: 100%;
+  width: 100%;
+}
+
+#root,
+#app,
+#wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  // Запретить масштабирование текста
+  text-size-adjust: 100%;
+  // Отображение шрифтов
+  text-rendering: optimizeLegibility;
+  // Улучшенный рендеринг шрифтов
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+// Сброс стилей для всех элементов
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  border-radius: 0;
+  border-style: none;
+
+  background: none;
+
+  box-sizing: border-box;
+
+  text-transform: none;
+  text-decoration: none;
+}
+
+* {
+  // Плавный переход при наведении
+  &:hover {
+    transition: all 0.2s ease 0s;
+  }
+
+  // Убрать outline при фокусе
+  &:focus {
+    outline: 0;
+  }
+}
+
+// Сброс выделения при касании для тачскринов
+* {
+  -webkit-tap-highlight-color: rgba(white, 0);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  background: white;
+  color: black;
+
+  // Наследование текстовых стилей для
+  * {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  // Запретить анимации до загрузки DOM
+  &.beforeLoad {
+    * {
+      transition: none !important;
+    }
+  }
+
+  // Стилизуем основной скролл страницы
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: whitesmoke;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: grey;
+  }
+}
+
+// Семантические теги
+header,
+nav,
+main,
+aside,
+section,
+article,
+footer {
+  display: block;
+}
+
+// Текстовые теги
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+// Формы и элемнты ввода
+
+form {
+  display: block;
+}
+
+textarea {
+  display: block;
+  resize: vertical;
+}
+
+// Input
+input {
+  display: block;
+  border: 1px solid grey;
+  width: 240px;
+  height: 40px;
+  padding: 0 10px;
+  margin: 0 20px 20px 0;
+
+  // Плавный показ плейсхолдера
+  &::placeholder {
+    transition: 0.2s;
+    opacity: 1;
+    color: grey;
+  }
+
+  // Плавное скрытие плейсхолдера
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    border-color: mediumseagreen;
+    cursor: pointer;
+  }
+
+  &:focus {
+    border-color: mediumseagreen;
+  }
+}
+
+// Текстовые инпуты
+[type="text"] {
+  &::-ms-clear,
+  &::-ms-reveal {
+    appearance: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+// Инпут - поиск
+[type="search"] {
+  // Убрать крестик у input search
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    appearance: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+// Убрать стрелки у input type number
+[type="number"] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}
+
+// Чекбоксы и радио
+[type="checkbox"],
+[type="radio"] {
+  width: 32px;
+  height: 32px;
+  appearance: none;
+  position: relative;
+
+  // Значок поверх фона
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transition: all 0.2s ease 0s;
+
+    transform: translate(-50%, -50%) rotate(180deg) scale(0);
+
+    background: url("../img/check.svg") no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  // В отмеченном состоянии
+  &:checked {
+    border-color: mediumseagreen;
+    background: mediumseagreen;
+
+    &::after {
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+// Только для радио
+[type="radio"] {
+  border-radius: 50%;
+
+  &::after {
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+// Select, option
+select {
+  display: block;
+
+  appearance: none;
+
+  border: 1px solid grey;
+
+  width: 200px;
+  height: 40px;
+  margin: 0 20px 20px 0;
+  padding: 0 10px;
+  //color: grey;
+  &:hover {
+    cursor: pointer;
+    border-color: mediumseagreen;
+  }
+
+  &:focus {
+    border-color: mediumseagreen;
+  }
+}
+
+// Кнопки
+
+button {
+  background: mediumseagreen;
+  color: white;
+  width: 160px;
+  height: 40px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Ссылки
+a {
+  display: block;
+
+  color: mediumseagreen;
+  margin-bottom: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Изображения
+picture,
+object {
+  display: block;
+}
+
+img {
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  max-width: 100%;
+  max-height: 100%;
+}
+
+// Списки
+ul,
+ol {
+  list-style: none;
+  li {
+    &::before,
+    &::after {
+      // Принудительно включить аппаратное ускорение на случай низкого заряда батареи
+      transform: translate3d(0, 0, 0);
+      transition: none;
+    }
+  }
+}

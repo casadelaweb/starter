@@ -1,1 +1,1 @@
-# starter
+# Simple Starter

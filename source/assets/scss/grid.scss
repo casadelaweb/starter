@@ -1,0 +1,72 @@
+// Брейкпоинты
+
+// Ноутбуки
+$brLaptop: 1439.5px;
+// Планшеты
+$brTablet: 1199.5px;
+$brTabletMd: 1023.5px;
+$brTabletSm: 767.5px;
+// Телефоны
+$brMobile: 539.5px;
+$brMobileSm: 374.5px;
+
+.container {
+  // Локальные переменные - ширина контейнера
+  $containerWidth: 1400px;
+
+  margin: 0 auto;
+  width: 100%;
+  max-width: $containerWidth;
+
+  @media (max-width: $brLaptop) {
+    max-width: 1200px;
+  }
+
+  @media (max-width: $brTablet) {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+
+  @media (max-width: $brTabletSm) {
+    padding: 0 15px;
+  }
+}
+
+// Вспомогательные классы
+
+.row,
+%row {
+  display: flex;
+}
+
+.align-center,
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+.space-between,
+%space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-center,
+%text-center {
+  text-align: center;
+}
+
+.text-left,
+%text-left {
+  text-align: left;
+}
+
+.text-right,
+%text-right {
+  text-align: right;
+}
+
+.text-justify,
+%text-justify {
+  text-align: justify;
+}
