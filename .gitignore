@@ -25,13 +25,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # Ignore
-*.html
-*.kit
-prepros.config
-src/*
-app/*
-assets/css/*
-assets/fonts/*
-assets/js/*
-assets/scss/*
-assets/img/*
