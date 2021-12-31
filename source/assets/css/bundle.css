@@ -1,0 +1,336 @@
+*::selection {
+  background: rgba(60, 179, 113, 0.25);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  display: block;
+  min-height: 100%;
+  width: 100%;
+}
+
+#root,
+#app,
+#wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  border-style: none;
+  background: none;
+  box-sizing: border-box;
+  text-transform: none;
+  text-decoration: none;
+}
+
+*:hover {
+  transition: all 0.2s ease 0s;
+}
+*:focus {
+  outline: 0;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  background: white;
+  color: black;
+}
+body * {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+body.beforeLoad * {
+  transition: none !important;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: whitesmoke;
+}
+body::-webkit-scrollbar-thumb {
+  background: grey;
+}
+
+header,
+nav,
+main,
+aside,
+section,
+article,
+footer {
+  display: block;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+form {
+  display: block;
+}
+
+textarea {
+  display: block;
+  resize: vertical;
+}
+
+input {
+  display: block;
+  border: 1px solid grey;
+  width: 240px;
+  height: 40px;
+  padding: 0 10px;
+  margin: 0 20px 20px 0;
+}
+input::placeholder {
+  transition: 0.2s;
+  opacity: 1;
+  color: grey;
+}
+input:focus::placeholder {
+  opacity: 0;
+}
+input:hover {
+  border-color: mediumseagreen;
+  cursor: pointer;
+}
+input:focus {
+  border-color: mediumseagreen;
+}
+
+[type=text]::-ms-clear, [type=text]::-ms-reveal {
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+[type=search]::-webkit-search-decoration, [type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-results-button, [type=search]::-webkit-search-results-decoration {
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+[type=checkbox],
+[type=radio] {
+  width: 32px;
+  height: 32px;
+  appearance: none;
+  position: relative;
+}
+[type=checkbox]::after,
+[type=radio]::after {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  transition: all 0.2s ease 0s;
+  transform: translate(-50%, -50%) rotate(180deg) scale(0);
+  background-image: url("data:image/svg;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2LjE2NjUgMy40NzgzMUMxNi40NzQ2IDMuMTc1MTQgMTYuODkzNCAzLjAwMzE5IDE3LjMzMTEgMy4wMDAwNEMxNy43NjkgMi45OTY5IDE4LjE5MDIgMy4xNjI4MiAxOC41MDI5IDMuNDYxNTRDMTguODE1NiAzLjc2MDI2IDE4Ljk5NDMgNC4xNjc0OSAxOC45OTk5IDQuNTk0MjNDMTkuMDA1NSA1LjAyMDk3IDE4LjgzNzYgNS40MzI1MyAxOC41MzI4IDUuNzM4OTZMOS43MTUzOSAxNi40ODQxQzkuNTYzOTEgMTYuNjQzMSA5LjM4MTEyIDE2Ljc3MDcgOS4xNzc5MiAxNi44NTkzQzguOTc0NzQgMTYuOTQ3OSA4Ljc1NTMyIDE2Ljk5NTYgOC41MzI3OSAxNi45OTk3QzguMzEwMjMgMTcuMDAzOCA4LjA4OTE0IDE2Ljk2NDEgNy44ODI2NiAxNi44ODMxQzcuNjc2MiAxNi44MDIgNy40ODg1OSAxNi42ODEyIDcuMzMxMDggMTYuNTI3OUwxLjQ4NTAyIDEwLjgzMTRDMS4xNzQzNiAxMC41Mjg0IDAuOTk5ODk1IDEwLjExNzYgMSA5LjY4OTJDMS4wMDAxMSA5LjI2MDgyIDEuMTc0NzggOC44NTAwNCAxLjQ4NTU4IDguNTQ3MkMxLjc5NjM5IDguMjQ0MzYgMi4yMTc4OCA4LjA3NDMxIDIuNjU3MzMgOC4wNzQ0MUMzLjA5Njc3IDguMDc0NSAzLjUxODE5IDguMjQ0NzcgMy44Mjg4NCA4LjU0Nzc1TDguNTMyNzkgMTIuOTQxOUwxNi4xMjI2IDMuNTI4NzRDMTYuMTM2NiAzLjUxMTQxIDE2LjE1MTYgMy40OTQ5MyAxNi4xNjc2IDMuNDc5NDFMMTYuMTY2NSAzLjQ3ODMxWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOC41MDI5IDMuNDYxNTRDMTguMTkwMiAzLjE2MjgyIDE3Ljc2OSAyLjk5NjkgMTcuMzMxMSAzLjAwMDA0QzE3LjIzNDggMy4wMDA3NCAxNy4xMzkzIDMuMDA5NjEgMTcuMDQ1OCAzLjAyNjI2QzE2Ljg0MjggMy4wNjIzOSAxNi42NDg4IDMuMTM1MTUgMTYuNDczNyAzLjI0MDQzQzE2LjQ2OTkgMy4yNDI3IDE2LjQ2NjEgMy4yNDQ5OSAxNi40NjIzIDMuMjQ3MjlDMTYuMzU1OCAzLjMxMjQ5IDE2LjI1NjUgMy4zODk4MSAxNi4xNjY1IDMuNDc4MzFMMTYuMTY3NiAzLjQ3OTQxQzE2LjE1MTYgMy40OTQ5MyAxNi4xMzY2IDMuNTExNDEgMTYuMTIyNiAzLjUyODc0TDguNTMyNzkgMTIuOTQxOUwzLjgyODg0IDguNTQ3NzVDMy41MTgxOSA4LjI0NDc3IDMuMDk2NzcgOC4wNzQ1IDIuNjU3MzMgOC4wNzQ0MUMyLjIxNzg4IDguMDc0MzEgMS43OTYzOSA4LjI0NDM2IDEuNDg1NTggOC41NDcyQzEuMTc0NzggOC44NTAwNCAxLjAwMDExIDkuMjYwODIgMSA5LjY4OTJDMC45OTk4OTUgMTAuMTE3NiAxLjE3NDM2IDEwLjUyODQgMS40ODUwMiAxMC44MzE0TDcuMzMxMDggMTYuNTI3OUM3LjQ4ODU5IDE2LjY4MTIgNy42NzYyIDE2LjgwMiA3Ljg4MjY2IDE2Ljg4MzFDOC4wODkxNCAxNi45NjQxIDguMzEwMjMgMTcuMDAzOCA4LjUzMjc5IDE2Ljk5OTdDOC43NTUzMiAxNi45OTU2IDguOTc0NzQgMTYuOTQ3OSA5LjE3NzkyIDE2Ljg1OTNDOS4zODExMiAxNi43NzA3IDkuNTYzOTEgMTYuNjQzMSA5LjcxNTM5IDE2LjQ4NDFMMTguNTMyOCA1LjczODk2QzE4LjgzNzYgNS40MzI1MyAxOS4wMDU1IDUuMDIwOTcgMTguOTk5OSA0LjU5NDIzQzE4Ljk5NDMgNC4xNjc0OSAxOC44MTU2IDMuNzYwMjYgMTguNTAyOSAzLjQ2MTU0Wk04LjkyODQ2IDE1Ljk0MjhMMTcuNzQ3OCA1LjE5NTQxTDE3Ljc3ODQgNS4xNjQ1OEMxNy45MTM1IDUuMDI4NzcgMTguMDAyOSA0LjgyODM0IDE3Ljk5OTkgNC42MDQyN0MxNy45OTcgNC4zODAyNSAxNy45MDI1IDQuMTgzNDEgMTcuNzY1NSA0LjA1MjUzQzE3LjYzMTggMy45MjQ3OCAxNy40NzYgMy44NzQwMyAxNy4zMzk0IDMuODc1MDFDMTcuMjE2IDMuODc1OSAxNy4wNzcxIDMuOTE5MTYgMTYuOTUzNyA0LjAyMzM5TDE2LjkyNjIgNC4wNDk5Nkw4LjY0MjE5IDE0LjMyNDFMMy4wOTE2NiA5LjEzOTA2TDMuMDg0NDkgOS4xMzIwN0MyLjk1MDkxIDkuMDAxNzkgMi43OTQzMSA4Ljk0OTQ0IDIuNjU3MDggOC45NDk0MUMyLjUxOTgxIDguOTQ5MzggMi4zNjMyMiA5LjAwMTY1IDIuMjI5NjEgOS4xMzE4M0MyLjA5Mjc3IDkuMjY1MTcgMi4wMDAwNiA5LjQ2NDQgMiA5LjY4OTM5QzEuOTk5OTQgOS45MTQyIDIuMDkyNDQgMTAuMTEzNCAyLjIyOTA3IDEwLjI0NjhMOC4wNzQ3IDE1Ljk0MjlDOC4wNzQ3MyAxNS45NDI5IDguMDc0NjggMTUuOTQyOSA4LjA3NDcgMTUuOTQyOUM4LjE0Mjg5IDE2LjAwOTMgOC4yMTggMTYuMDU1NyA4LjI5MjA0IDE2LjA4NDhDOC4zNjU2MyAxNi4xMTM2IDguNDM5OTEgMTYuMTI2MiA4LjUxMTc3IDE2LjEyNDlDOC41ODM2MyAxNi4xMjM2IDguNjU4MiAxNi4xMDgyIDguNzMxOSAxNi4wNzYxQzguNzk5MiAxNi4wNDY4IDguODY2NzUgMTYuMDAyOSA4LjkyODQ2IDE1Ljk0MjhaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K");
+  background-position: center center;
+  background-size: contain;
+}
+[type=checkbox]:checked,
+[type=radio]:checked {
+  border-color: mediumseagreen;
+  background: mediumseagreen;
+}
+[type=checkbox]:checked::after,
+[type=radio]:checked::after {
+  transform: translate(-50%, -50%);
+}
+
+[type=radio] {
+  border-radius: 50%;
+}
+[type=radio]::after {
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+select {
+  display: block;
+  appearance: none;
+  border: 1px solid grey;
+  width: 200px;
+  height: 40px;
+  margin: 0 20px 20px 0;
+  padding: 0 10px;
+}
+select:hover {
+  cursor: pointer;
+  border-color: mediumseagreen;
+}
+select:focus {
+  border-color: mediumseagreen;
+}
+
+button {
+  background: mediumseagreen;
+  color: white;
+  width: 160px;
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  display: block;
+  color: mediumseagreen;
+  margin-bottom: 20px;
+}
+a:hover {
+  cursor: pointer;
+}
+
+picture,
+object {
+  display: block;
+}
+
+img {
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+ul li::before, ul li::after,
+ol li::before,
+ol li::after {
+  transform: translate3d(0, 0, 0);
+  transition: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+}
+@media (max-width: 1439.5px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+@media (max-width: 1199.5px) {
+  .container {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 767.5px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
