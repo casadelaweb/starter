@@ -5,7 +5,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Предотвратить нежелательные анимации во время загрузки страницы
   function preventAnimationsBeforeLoad() {
-    document.body.classList.remove("beforeLoad");
+    const body = document.body;
+    body.classList.remove("beforeLoad");
   }
   preventAnimationsBeforeLoad();
 });
